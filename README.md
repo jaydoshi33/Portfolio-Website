@@ -1,40 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Jay Doshi - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 13, TypeScript, and Tailwind CSS. This project showcases my skills, projects, and experience in a clean and interactive way.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- ⚡️ Blazing fast performance with Next.js 13 App Router
+- 🎨 Beautiful UI with Tailwind CSS and Framer Motion animations
+- 📱 Fully responsive design that works on all devices
+- 🌓 Dark/Light mode support
+- 📝 Blog section (coming soon)
+- ✉️ Contact form with form validation
+
+## 🛠 Technologies Used
+
+- **Frontend**: Next.js 13, React 18, TypeScript
+- **Styling**: Tailwind CSS, PostCSS
+- **Animation**: Framer Motion
+- **Icons**: Lucide Icons
+- **Form Handling**: React Hook Form
+- **Deployment**: Vercel
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0.0 or later
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/jay-portfolio.git
+   cd jay-portfolio
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## 🎨 Customization
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory and add the following variables:
+
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+# Add other environment variables here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Styling
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+This project uses Tailwind CSS for styling. You can customize the design by modifying the `tailwind.config.js` file.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 📦 Project Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```
+src/
+├── app/                  # App Router
+│   ├── api/             # API routes
+│   ├── components/      # Reusable components
+│   ├── styles/          # Global styles
+│   └── ...
+├── public/              # Static files
+└── ...
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧪 Running Tests
 
-## Learn More
+```bash
+npm test
+# or
+yarn test
+# or
+pnpm test
+# or
+bun test
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+This project is configured for deployment on Vercel. For more details, check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🙏 Acknowledgments
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Framer Motion Documentation](https://www.framer.com/motion/)

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42; /* slate-900 */
+  --background-start-rgb: 255, 255, 255; /* white */
+  --background-end-rgb: 241, 245, 249; /* slate-50 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 23, 42; /* slate-900 */
+    --background-end-rgb: 30, 41, 59; /* slate-800 */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--background-start-rgb));
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: #6366f1; /* indigo-500 */
+  color: white;
+}
+
+/* Remove focus outline for mouse users but keep for keyboard navigation */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Animation for elements that should fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Custom utility classes */
+.container {
+  @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-20 md:py-32;
+}
+
+/* For the active link in navigation */
+.active {
+  @apply text-indigo-600 dark:text-indigo-400 font-medium;
+}
