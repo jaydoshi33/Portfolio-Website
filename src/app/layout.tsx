@@ -10,7 +10,7 @@ export const metadata = {
   keywords: ['portfolio', 'developer', 'full stack', 'web development', 'Jay Doshi'],
   authors: [{ name: 'Jay Doshi' }],
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: light)', color: '#efe2cf' }, // light coffee
     { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
   ],
 };
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body 
-        className={`${inter.className} bg-white text-slate-900 dark:bg-slate-900 dark:text-white antialiased`}
+        className={`${inter.className} bg-background text-foreground antialiased`}
       >
         {children}
         <Toaster />

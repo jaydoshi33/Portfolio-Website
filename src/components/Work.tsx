@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, ExternalLink, Github } from 'lucide-react';
+import { Code, ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 type Project = {
@@ -19,46 +19,62 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce platform with product listings, cart functionality, and secure checkout process.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    category: 'web',
-    image: '/project1.jpg',
-    github: 'https://github.com/yourusername/ecommerce-platform',
-    demo: 'https://ecommerce-demo.example.com',
+    title: 'MINDMATE – AI-Powered Mental Health Journal',
+    description: 'An AI-powered journal app offering real-time mood analysis and personalized mental health support using DistilRoBERTa and OpenAI GPT APIs.',
+    tags: ['Next.js', 'FastAPI', 'HuggingFace', 'OpenAI', 'Tailwind CSS'],
+    category: 'ai',
+    image: '/mindmate.png',
+    github: 'https://github.com/jaydoshi33/mindmate',
+    demo: 'https://mindmate-ai-demo.vercel.app',
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team collaboration features.',
-    tags: ['Next.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    category: 'web',
-    image: '/project2.jpg',
-    github: 'https://github.com/yourusername/task-management',
-    demo: 'https://taskapp-demo.example.com',
+    title: 'Fraud Detection System',
+    description: 'High-accuracy (99%) fraud detection ML API with FastAPI backend and Streamlit UI for financial transaction analysis.',
+    tags: ['FastAPI', 'Streamlit', 'scikit-learn', 'Docker', 'GitHub Actions'],
+    category: 'ai',
+    image: '/fraud-detection.png',
+    github: 'https://github.com/jaydoshi33/Credit-Card-Fraud-Detection',
+    demo: 'https://fraud-detection-demo.herokuapp.com',
   },
   {
     id: 3,
-    title: 'Fitness Tracker',
-    description: 'Mobile app for tracking workouts, nutrition, and fitness progress with data visualization.',
-    tags: ['React Native', 'Redux', 'Firebase'],
-    category: 'mobile',
-    image: '/project3.jpg',
-    github: 'https://github.com/yourusername/fitness-tracker',
+    title: 'ML Powered Churn Predictor',
+    description: 'Random Forest model achieving 95% accuracy in identifying high-risk banking customers with comprehensive feature importance analysis.',
+    tags: ['Python', 'scikit-learn', 'Pandas', 'Matplotlib', 'Jupyter'],
+    category: 'ai',
+    image: '/churn-pred.png',
+    github: 'https://github.com/jaydoshi33/banking-churn-prediction',
   },
   {
     id: 4,
-    title: 'AI Image Generator',
-    description: 'Web application that generates images using AI based on text prompts.',
-    tags: ['React', 'OpenAI', 'Node.js', 'MongoDB'],
-    category: 'ai',
-    image: '/project4.jpg',
-    github: 'https://github.com/yourusername/ai-image-generator',
-    demo: 'https://ai-image-generator.example.com',
+    title: 'Student Profile Management System',
+    description: 'Streamlined document verification workflow reducing approval time from 15 to 3 days for 150+ daily users.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Redux'],
+    category: 'web',
+    image: '/student-profile.png',
+    github: 'https://github.com/jaydoshi33/Student-Profile-Management-System',
+  },
+  {
+    id: 5,
+    title: 'AR-Based Learning Application',
+    description: 'Real-time 3D AR tool in Unity/C# for simulating surgical procedures, awarded 2nd prize and patented with the Government of India.',
+    tags: ['Unity', 'C#', 'ARCore', 'Blender', '3D Modeling'],
+    category: 'mobile',
+    image: '/AR-dental-2.jpg',
+    github: 'https://github.com/jaydoshi33/Augmented-Reality-App',
+  },
+  {
+    id: 6,
+    title: 'Cosmos Zone Management System',
+    description: 'NSF-funded project for spectrum sharing in NYC/Manhattan with Flask APIs, Redis, and Kubernetes orchestration.',
+    tags: ['Python', 'Flask', 'Redis', 'Kubernetes', 'PostgreSQL'],
+    category: 'web',
+    image: '/cosmos-logo-new.png',
   },
 ];
 
-const categories = ['all', 'web', 'mobile', 'ai'];
+const categories = ['all', 'web', 'ai', 'mobile'];
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -69,7 +85,7 @@ const Work = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="work" className="py-20 bg-muted/20">
+    <section id="work" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,9 +94,9 @@ const Work = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Work</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects & Research</h2>
           <p className="text-muted-foreground">
-            Here are some of my recent projects. Each project represents a unique challenge and learning opportunity.
+            A collection of my technical projects, research work, and contributions. Each project reflects my passion for solving complex problems with innovative solutions.
           </p>
         </motion.div>
 
@@ -92,7 +108,7 @@ const Work = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeCategory === category
                   ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
+                  : 'text-foreground hover:text-primary'
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -114,36 +130,42 @@ const Work = () => {
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
-                <div className="h-48 bg-muted/30 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, i) => (
-                          <span key={i} className="text-xs px-2 py-1 bg-primary/20 text-primary-foreground rounded-full">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                <div className="relative group overflow-hidden rounded-lg">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-end p-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, i) => (
+                        <span key={i} className="text-xs bg-primary/20 text-primary-foreground px-2 py-1 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
+                  </div>
+                  <div className="w-full h-48 bg-background/50 rounded-lg mb-4 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                   <div className="flex items-center gap-3">
                     {project.github && (
                       <Button variant="outline" size="sm" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-2" />
-                          Code
-                        </a>
-                      </Button>
-                    )}
-                    {project.demo && (
-                      <Button size="sm" asChild>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Live Demo
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-sm text-primary hover:underline group-hover:translate-x-1 transition-transform"
+                          aria-label={`View ${project.title} source code`}
+                        >
+                          <Github className="h-4 w-4 mr-1" />
+                          View Code
+                          <ExternalLink className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </a>
                       </Button>
                     )}
@@ -165,7 +187,7 @@ const Work = () => {
             Want to see more of my work? Check out my GitHub profile.
           </p>
           <Button variant="outline" size="lg" asChild>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jaydoshi33" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5 mr-2" />
               View GitHub
             </a>

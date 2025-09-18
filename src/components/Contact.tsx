@@ -166,7 +166,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-start space-x-4 group transition-colors hover:text-primary"
               >
-                <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                <div className="p-3 rounded-lg bg-background border border-border text-primary group-hover:border-primary/50 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -184,7 +184,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-card p-8 rounded-xl shadow-lg border"
+            className="bg-background p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-300"
           >
             <h3 className="text-2xl font-bold mb-6">Send me a message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">

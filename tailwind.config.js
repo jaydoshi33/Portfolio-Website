@@ -16,38 +16,40 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(214.3, 31.8%, 91.4%)",
-        input: "hsl(214.3, 31.8%, 91.4%)",
-        ring: "hsl(221.2, 83.2%, 53.3%)",
-        background: "hsl(0, 0%, 100%)",
-        foreground: "hsl(222.2, 84%, 4.9%)",
+        // Coffee + Olive palette
+        // background: light coffee, foreground: near-black
+        border: "hsl(35, 30%, 80%)",
+        input: "hsl(35, 30%, 80%)",
+        ring: "hsl(82, 39%, 34%)", // olive ring
+        background: "hsl(35, 56%, 90%)", // light coffee
+        foreground: "hsl(0, 0%, 10%)", // near-black
         primary: {
-          DEFAULT: "hsl(221.2, 83.2%, 53.3%)",
-          foreground: "hsl(210, 40%, 98%)",
+          DEFAULT: "hsl(82, 39%, 34%)", // olive green
+          foreground: "hsl(0, 0%, 98%)",
         },
         secondary: {
-          DEFAULT: "hsl(215, 14%, 34%)",
-          foreground: "hsl(210, 40%, 98%)",
+          DEFAULT: "hsl(35, 40%, 85%)", // softer coffee
+          foreground: "hsl(0, 0%, 14%)",
         },
         destructive: {
-          DEFAULT: "hsl(0, 84.2%, 60.2%)",
-          foreground: "hsl(210, 40%, 98%)",
+          DEFAULT: "hsl(0, 70%, 50%)",
+          foreground: "hsl(0, 0%, 98%)",
         },
         muted: {
-          DEFAULT: "hsl(210, 40%, 96.1%)",
-          foreground: "hsl(215.4, 16.3%, 46.9%)",
+          DEFAULT: "hsl(35, 35%, 88%)",
+          foreground: "hsl(35, 20%, 35%)",
         },
         accent: {
-          DEFAULT: "hsl(262.1, 83.3%, 57.8%)",
-          foreground: "hsl(210, 40%, 98%)",
+          DEFAULT: "hsl(82, 25%, 40%)", // muted olive accent
+          foreground: "hsl(0, 0%, 98%)",
         },
         popover: {
-          DEFAULT: "hsl(0, 0%, 100%)",
-          foreground: "hsl(222.2, 84%, 4.9%)",
+          DEFAULT: "hsl(35, 56%, 95%)",
+          foreground: "hsl(0, 0%, 10%)",
         },
         card: {
-          DEFAULT: "hsl(0, 0%, 100%)",
-          foreground: "hsl(222.2, 84%, 4.9%)",
+          DEFAULT: "hsl(35, 56%, 95%)",
+          foreground: "hsl(0, 0%, 10%)",
         },
       },
       borderRadius: {

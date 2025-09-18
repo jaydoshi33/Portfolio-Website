@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 15, 23, 42; /* slate-900 */
-  --background-start-rgb: 255, 255, 255; /* white */
-  --background-end-rgb: 241, 245, 249; /* slate-50 */
+  /* Coffee + Olive palette */
+  --foreground-rgb: 26, 26, 26; /* near-black */
+  --background-start-rgb: 239, 226, 207; /* light coffee */
+  --background-end-rgb: 232, 218, 196; /* slightly deeper coffee */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,12 +19,13 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background-color: rgb(var(--background-start-rgb));
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 /* Custom scrollbar */
@@ -37,12 +39,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgba(85, 107, 47, 0.6); /* olive */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: rgba(85, 107, 47, 0.8);
 }
 
 /* Smooth scrolling */
@@ -52,7 +54,7 @@ html {
 
 /* Selection styling */
 ::selection {
-  background: #6366f1; /* indigo-500 */
+  background: #556b2f; /* olive */
   color: white;
 }
 
@@ -82,5 +84,5 @@ html {
 
 /* For the active link in navigation */
 .active {
-  @apply text-indigo-600 dark:text-indigo-400 font-medium;
+  @apply text-primary font-medium;
 }
