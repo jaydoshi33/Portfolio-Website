@@ -70,6 +70,7 @@ const projects: Project[] = [
     description: 'NSF-funded project for spectrum sharing in NYC/Manhattan with Flask APIs, Redis, and Kubernetes orchestration.',
     tags: ['Python', 'Flask', 'Redis', 'Kubernetes', 'PostgreSQL'],
     category: 'web',
+    github: 'https://github.com/jaydoshi33/Cosmos-ZoneManagementSystem',
     image: '/cosmos-logo-new.png',
   },
 ];
