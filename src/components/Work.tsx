@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { Button } from './ui/button';
+import Image from 'next/image';
 
 type Project = {
   id: number;
@@ -79,7 +80,6 @@ const categories = ['all', 'web', 'ai', 'mobile'];
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const filteredProjects = activeCategory === 'all' 
     ? projects 
@@ -128,8 +128,6 @@ const Work = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 className="relative group overflow-hidden rounded-xl border border-border bg-card"
-                onMouseEnter={() => setHoveredProject(project.id)}
-                onMouseLeave={() => setHoveredProject(null)}
               >
                 <div className="relative group overflow-hidden rounded-lg">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-end p-4">
@@ -141,11 +139,14 @@ const Work = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="w-full h-48 bg-background/50 rounded-lg mb-4 overflow-hidden">
-                    <img
+                  <div className="w-full h-48 bg-background/50 rounded-lg mb-4 overflow-hidden relative">
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      priority={project.id <= 3}
                     />
                   </div>
                 </div>

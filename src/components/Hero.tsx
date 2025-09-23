@@ -82,11 +82,6 @@ const Hero = () => {
     show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   };
 
-  const fadeInUp = {
-    hidden: { y: 60, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.6 } },
-  };
-
   const textReveal = {
     hidden: { y: 100, opacity: 0 },
     show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
@@ -111,7 +106,7 @@ const Hero = () => {
               variants={textReveal}
               custom={0}
             >
-              Hi, I'm
+              Hi, I&apos;m
             </motion.span>
             <motion.span 
               className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent block font-bold drop-shadow-lg leading-tight py-1"
