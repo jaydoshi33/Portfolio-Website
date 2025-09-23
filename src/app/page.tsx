@@ -46,7 +46,7 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, { hasEr
           <div className="text-center p-8 max-w-2xl">
             <h2 className="text-2xl font-bold mb-4">Something went wrong</h2>
             <p className="text-muted-foreground mb-6">
-              We're having trouble loading this section. Please try refreshing the page or come back later.
+              We&apos;re having trouble loading this section. Please try refreshing the page or come back later.
             </p>
             <button
               onClick={() => window.location.reload()}

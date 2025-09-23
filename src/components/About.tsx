@@ -1,8 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Database, Server, Cpu, GitBranch, GraduationCap, Briefcase, BrainCircuit, CpuIcon, Cloud, Code2, ArrowRight } from 'lucide-react';
-import { Button } from './ui/button';
+import { Code, Database, GitBranch, GraduationCap, Briefcase, BrainCircuit, CpuIcon, Cloud, Code2 } from 'lucide-react';
 
 const education = [
   {

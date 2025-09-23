@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { ArrowRight, Mouse } from 'lucide-react';
+import Image from 'next/image';
 
 // Parallax component for scroll-based animations
 function ParallaxImage({ scrollYProgress, offset = 0.5 }: { scrollYProgress: MotionValue<number>, offset?: number }) {
@@ -15,10 +16,13 @@ function ParallaxImage({ scrollYProgress, offset = 0.5 }: { scrollYProgress: Mot
       className="relative w-full h-full"
     >
       <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-background shadow-2xl">
-        <img
+        <Image
           src="/profile.jpg"
           alt="Jay Doshi"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 256px, (max-width: 1200px) 320px, 384px"
+          className="object-cover"
+          priority
         />
       </div>
     </motion.div>
@@ -65,7 +69,6 @@ function ScrollIndicator() {
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const container = {
     hidden: { opacity: 0 },
     show: {

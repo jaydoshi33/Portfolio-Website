@@ -1,16 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: ['images.unsplash.com', 'source.unsplash.com'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'source.unsplash.com' },
+    ],
     formats: ['image/avif', 'image/webp'],
   },
-  experimental: {
-    appDir: true,
-    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs'],
-  },
-  webpack: (config, { isServer }) => {
+  serverExternalPackages: ['@prisma/client', 'bcryptjs'],
+  webpack: (config) => {
     // Add support for loading .svg files
     config.module.rules.push({
       test: /\.svg$/,

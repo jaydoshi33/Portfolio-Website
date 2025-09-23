@@ -255,7 +255,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Hi Jay, I'd like to discuss a project..."
+                    placeholder="Hi Jay, I&apos;d like to discuss a project..."
                     disabled={isSubmitting || isSubmitted}
                     className={errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}
                   />
@@ -327,7 +327,7 @@ export default function Contact() {
                       exit={{ opacity: 0, y: -10 }}
                       className="mt-4 text-center text-sm text-green-600"
                     >
-                      Thank you for your message! I'll get back to you soon.
+                      Thank you for your message! I&apos;ll get back to you soon.
                     </motion.p>
                   )}
                 </AnimatePresence>
