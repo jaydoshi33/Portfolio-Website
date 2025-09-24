@@ -22,7 +22,7 @@ module.exports = {
         border: "hsl(35, 30%, 80%)",
         input: "hsl(35, 30%, 80%)",
         ring: "hsl(82, 39%, 34%)", // olive ring
-        background: "hsl(35, 56%, 90%)", // light coffee
+        background: "hsl(40, 100%, 98.8%)", // light coffee
         foreground: "hsl(0, 0%, 10%)", // near-black
         primary: {
           DEFAULT: "hsl(82, 39%, 34%)", // olive green

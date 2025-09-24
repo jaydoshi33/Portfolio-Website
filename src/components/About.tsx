@@ -105,7 +105,7 @@ const experience = [
     period: 'Apr 2025 - Present',
     description: 'NSF-Funded Cosmos Zone Management System for Spectrum Sharing',
     achievements: [
-      'Developed the Cosmos Zone Management System for spectrum sharing in NYC/Manhattan',
+      'Built the first-of-its-kind RF interference monitoring and management system, enabling seamless spectrum sharing for 3,000+ devices across NYC under the NSF-funded NRDZ project',
     ],
     icon: BrainCircuit,
     color: 'text-purple-500'
@@ -117,7 +117,7 @@ const experience = [
     period: 'Mar 2025 - Present',
     description: 'Web Platform Development for Poverty-Alleviation Programs',
     achievements: [
-      'Built responsive web platform with React/Next.js supporting 5K+ users',
+      'Delivered multiple community development web apps under tight deadlines, optimizing performance and collaborating with design teams to ensure accessibility; ran sprint demos and iterated on UI/UX with stakeholders, driving smooth adoption and real impact for community programs',
     ],
     icon: GitBranch,
     color: 'text-blue-500'
@@ -129,7 +129,7 @@ const experience = [
     period: 'Dec 2021 - Jul 2024',
     description: 'Insurance Automation Platform',
     achievements: [
-      'Automated insurance renewals with Java/Spring Boot microservices + React UI, cutting manual errors by 65%',
+      'Engineered enterprise web solutions with Java/Spring Boot microservices + React, delivering 25+ production-ready features — including an automated insurance renewal system that cut manual errors by 65% and saved 20+ hours/month — with Dockerized services deployed to AWS via CI/CD',
     ],
     icon: Code,
     color: 'text-green-500'
@@ -299,7 +299,7 @@ const About = () => {
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20" />
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 z-0" />
             
             <div className="space-y-8">
               {experience.map((exp, index) => (
@@ -310,16 +310,17 @@ const About = () => {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-50px" }}
-                  whileHover="hover"
-                  className={`relative pl-12 group`}
+                  className={`relative pl-12 group overflow-visible`}
                 >
                   {/* Timeline dot */}
-                  <div className={`absolute left-0 top-4 w-8 h-8 rounded-full flex items-center justify-center ${exp.color} bg-background border-2 border-primary/20 group-hover:border-primary/50 transition-colors`}>
+                  <div className={`absolute left-0 top-4 w-8 h-8 rounded-full flex items-center justify-center ${exp.color} bg-background border-2 border-primary/20 transition-colors`}>
                     <exp.icon className="w-4 h-4" />
                   </div>
                   
                   <motion.div 
-                    className="p-6 bg-background rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-300"
+                    className="relative z-10 p-6 bg-background rounded-xl border border-border shadow-sm transition-all duration-300"
+                    whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)' }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                       <h4 className="text-lg font-semibold">{exp.role}</h4>
