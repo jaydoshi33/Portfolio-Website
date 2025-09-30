@@ -118,19 +118,19 @@ export default function Contact() {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: 'Email',
       value: 'hello@jaydoshi.dev',
-      href: 'mailto:hello@jaydoshi.dev',
+      href: 'mailto:jdoshi01@syr.edu',
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'New York, NY',
       href: 'https://maps.google.com',
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+1 (315) 374-0632',
+      href: 'tel:+13153740632',
     },
   ];
 
