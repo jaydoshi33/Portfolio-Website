@@ -53,6 +53,8 @@ const skills = [
 
 import type { Variants } from 'framer-motion';
 
+type Achievement = string | { type: 'link'; text: string; url: string };
+
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -97,13 +99,22 @@ const skillItem: Variants = {
   })
 };
 
-const experience = [
+const experience: Array<{
+  id: number;
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+  achievements: Achievement[];
+  icon: any;
+  color: string;
+}> = [
   {
     id: 1,
     role: 'Research Assistant (Software Engineering)',
     company: 'Syracuse University, NY, USA',
     period: 'Apr 2025 - Present',
-    description: 'NSF-Funded Cosmos Zone Management System for Spectrum Sharing',
+    description: '$1.25 million NSF-Funded Cosmos Zone Management System for Spectrum Sharing',
     achievements: [
       'Built the first-of-its-kind RF interference monitoring and management system, enabling seamless spectrum sharing for 3,000+ devices across NYC under the NSF-funded NRDZ project',
     ],
@@ -115,9 +126,10 @@ const experience = [
     role: 'Program Manager',
     company: 'iConsult Collaborative (Nonprofit), NY, USA',
     period: 'Mar 2025 - Present',
-    description: 'Web Platform Development for Poverty-Alleviation Programs',
+    description: 'Payment, Authentication, and othercore features across iOS, Android, and web platforms',
     achievements: [
-      'Delivered multiple community development web apps under tight deadlines, optimizing performance and collaborating with design teams to ensure accessibility; ran sprint demos and iterated on UI/UX with stakeholders, driving smooth adoption and real impact for community programs',
+      'Managed 3 teams (12+ members) delivering end-to-end tech solutions for Upstate FHC, and 2 startups. Featured on the website: ',
+      { type: 'link', text: 'Iconsult Collaborative', url: 'https://professionalstudies.syracuse.edu/academics/iconsult-collaborative-at-syracuse-university/iconsult-team/' }
     ],
     icon: GitBranch,
     color: 'text-blue-500'
@@ -345,7 +357,20 @@ const About = () => {
                           className="flex items-start text-sm"
                         >
                           <span className={`inline-block w-1.5 h-1.5 rounded-full mt-2 mr-2 ${exp.color}`} />
-                          <span>{achievement}</span>
+                          <span>
+                            {typeof achievement === 'string' ? (
+                              achievement
+                            ) : (
+                              <a 
+                                href={achievement.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-primary/80 underline transition-colors"
+                              >
+                                {achievement.text}
+                              </a>
+                            )}
+                          </span>
                         </motion.li>
                       ))}
                     </ul>
