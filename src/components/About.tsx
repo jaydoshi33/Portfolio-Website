@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Database, GitBranch, GraduationCap, Briefcase, BrainCircuit, CpuIcon, Cloud, Code2 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 const education = [
   {
@@ -106,7 +107,7 @@ const experience: Array<{
   period: string;
   description: string;
   achievements: Achievement[];
-  icon: any;
+  icon: LucideIcon;
   color: string;
 }> = [
   {
